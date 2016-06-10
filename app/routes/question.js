@@ -11,12 +11,13 @@ export default Ember.Route.extend({
     newAnswer.save().then(function(){
       return question.save();
     });
-    this.transitionTo('question', question.id);
-    // this.transitionTo('index'); //maybe to the question page?
   },
   actions: {
     saveAnswer(params){
       this._saveAnswer(params)
+    },
+    goHome(){
+      this.transitionTo('index');
     }
   }
 });

@@ -11,6 +11,7 @@ export default Ember.Route.extend({
     var newQuestion = this.store.createRecord('question', params);
     newQuestion.save();
 
+    this.transitionTo('question', newQuestion.id);
     // this.transitionTo('index'); //maybe to the question page?
   },
   actions: {

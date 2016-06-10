@@ -13,18 +13,18 @@
     <br>
       <br>
         <br>
-
+<button type="button" {{action 'showForm'}}>finish</button>
 {{else}}
 
 <h3>{{answer.author}} said:</h3>
 <p>{{answer.content}}</p>
-
+<button type="button" {{action 'showForm'}}>edit</button>
 {{/if}}
 
 
 
 
-<button type="button" {{action 'showForm'}}>edit</button>
+
 <button {{action 'destroyAnswer'}}>Delete</button>
 
 

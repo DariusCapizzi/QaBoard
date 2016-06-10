@@ -2,5 +2,11 @@
 <!-- {{question-list questions=model.questions}} -->
 
 {{#each model.questions as |question|}}
-  {{question-tile question=question}}
+  <div class="homeQuestionDiv">
+    {{#link-to 'question' question.id}}
+    <h4><span class="Q">Q:</span> {{question.content}}</h4>
+    {{/link-to}}
+
+    <h5> asked by: {{question.author}}</h5>
+  </div>
 {{/each}}

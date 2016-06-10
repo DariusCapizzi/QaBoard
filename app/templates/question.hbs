@@ -1,8 +1,5 @@
-<h2>{{model.content}}</h2>
-<h3>by: {{model.author}}</h3>
+{{question-tile question=model goHome="goHome"}}
 
 {{new-answer question=model sendAnswer="saveAnswer"}}
-
-<p>{{model.notes}}</p>
 
 {{answer-list answers=model.answers sendAnswer="addAnswer"}}

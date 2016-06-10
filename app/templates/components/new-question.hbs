@@ -1,13 +1,18 @@
 {{#if isShowForm}}
-  <form class="">
-    <label for="author">Author: </label>
-    {{input value=author}}
-    <label for="content">Question: </label>
-    {{input value=content}}
-    <label for="notes">Notes: </label>
-    {{input value=notes}}
-    <button type="button" {{action 'submitQuestion'}}>Submit</button>
-  </form>
+  <div class="newQuestionDiv">
+    <form class="newQuestionForm">
+
+      <label for="content">???: </label><br>
+      {{textarea placeholder="Remember, be nice!" value=content }}
+      <br>
+      <label for="author">from: </label>
+      {{input placeholder="anon" value=author}}
+
+      <label for="notes">Notes: </label>
+      {{input placeholder="i love you" value=notes}}
+      <button type="button" {{action 'submitQuestion'}}>Submit</button>
+    </form>
+  </div>
 {{else}}
-  <button type="button" {{action 'showForm'}}>Add Question</button>
+  <button type="button" {{action 'showForm'}}>new Question?</button>
 {{/if}}

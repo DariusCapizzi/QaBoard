@@ -9,6 +9,7 @@ export default Ember.Component.extend({
     destroyQuestion() {
       if (!parseInt(this.question.id)) {
         this.question.destroyRecord();
+        this.sendAction('goHome');
       }
     },
     showForm(){
