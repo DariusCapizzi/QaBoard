@@ -1,5 +1,8 @@
-<!-- <h2>{{model.name}}</h2>
+<h2>{{model.content}}</h2>
 <h3>by: {{model.author}}</h3>
+
+{{new-answer question=model sendAnswer="saveAnswer"}}
+
 <p>{{model.notes}}</p>
-{{new-answer question=model sendAnswer="addAnswer"}}
-{{answer-list answers=model.answers}} -->
+
+{{answer-list answers=model.answers sendAnswer="addAnswer"}}

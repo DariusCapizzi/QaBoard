@@ -1,0 +1,31 @@
+<div class="answer">
+
+{{#if isShowForm}}
+    <br>
+      <br>
+    <label for="content">Answer :</label>
+    {{input value=content  key-up="updateContent"}}
+  <br>
+    <br>
+      <br>
+    <label for="author">Author :</label>
+    {{input value=author key-up="updateAuthor"}}
+    <br>
+      <br>
+        <br>
+
+{{else}}
+
+<h3>{{answer.author}} said:</h3>
+<p>{{answer.content}}</p>
+
+{{/if}}
+
+
+
+
+<button type="button" {{action 'showForm'}}>edit</button>
+<button {{action 'destroyAnswer'}}>Delete</button>
+
+
+</div>
