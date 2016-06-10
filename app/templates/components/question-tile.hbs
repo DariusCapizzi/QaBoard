@@ -1,0 +1,37 @@
+
+
+{{#if isShowForm}}
+    <br>
+      <br>
+    <label for="content">Question :</label>
+    {{input value=content  key-up="updateContent"}}
+  <br>
+    <br>
+      <br>
+    <label for="author">Author :</label>
+    {{input value=author key-up="updateAuthor"}}
+    <br>
+      <br>
+        <br>
+    <label for="notes">Notes: </label>
+    {{input value=notes key-up="updateNotes"}}
+    <br>
+      <br>
+        <br>
+
+{{else}}
+    {{#link-to 'question' question.id}}
+    <h4>{{question.content}}</h4>
+    {{/link-to}}
+
+    <h5> by: {{question.author}}</h5>
+
+    <p>{{question.notes}}</p>
+{{/if}}
+
+
+
+    <button type="button" {{action 'showForm'}}>edit</button>
+    <button {{action 'destroyQuestion' post}}>Delete</button>
+
+<hr>
