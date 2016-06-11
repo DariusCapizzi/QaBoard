@@ -7,12 +7,11 @@ export default Ember.Route.extend({
     });
   },
   _saveQuestion(params){
-    // console.log(params)
+
     var newQuestion = this.store.createRecord('question', params);
     newQuestion.save();
 
     this.transitionTo('question', newQuestion.id);
-    // this.transitionTo('index'); //maybe to the question page?
   },
   actions: {
     saveQuestion(params){

@@ -4,8 +4,30 @@
   padding-right:  100px;
 }
 
-.newQuestionDiv{
+.princeCharming {
+  font-size: 50px;
+  color:#ABDDED;
 
+  bottom:0px;
+}
+.A{
+  float: left;
+  color: brown;
+  font-size: 80px;
+  padding-right:  100px;
+}
+
+.singleAnswer{
+  background-image: url("/assets/images/letter.jpg");
+  background-size: cover;
+  font-size: 20px;
+  text-align: right;
+  padding: 20px;
+  width: 500px;
+  -moz-box-shadow:    3px 3px 6px 6px #E8BDAE;
+  -webkit-box-shadow: 3px 3px 6px 6px #E8BDAE;
+  box-shadow:         3px 3px 6px 6px #E8BDAE;
+  height: 200px;
 }
 
 textarea {
@@ -13,12 +35,14 @@ textarea {
   background-size: cover;
   font-size: 20px;
   outline: none;
+  text-align: right;
   resize: none;
   width: 500px;
   height: 200px;
 }
 
-.homeQuestionDiv {
+.questionDiv {
+    padding-left: 20px;
   background-image: url("/assets/images/letter.jpg");
   background-size: cover;
   -moz-box-shadow:    3px 3px 6px 6px #E8BDAE;
@@ -41,8 +65,8 @@ body {
 }
 
 a {
-  text-decoration: underline;
-  text-decoration-color:yellow;
+  text-decoration: none;
+  /*border-bottom: 10px solid yellow;*/
 }
 
 .nav {

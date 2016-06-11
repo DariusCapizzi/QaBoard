@@ -2,34 +2,31 @@
 
 {{#if isShowForm}}
     <br>
-      <br>
-    <label for="content">Question :</label>
-    {{input value=content  key-up="updateContent"}}
-  <br>
+  <div class="editQuestionDiv">
+    <label for="content">Change your question :</label>
     <br>
-      <br>
-    <label for="author">Author :</label>
-    {{input value=author key-up="updateAuthor"}}
+    {{textarea placeholder="Remember, be nice!"  key-up="updateContent" value=content}}
     <br>
-      <br>
-        <br>
-    <label for="notes">Notes: </label>
-    {{input value=notes key-up="updateNotes"}}
-    <br>
-      <br>
-        <br>
-
+    <label for="author">or your name :</label>
+    {{input placeholder="a secret admirer" value=author key-up="updateAuthor"}}
+    <label for="notes">or notes: </label>
+    {{input placeholder="i love you" value=notes key-up="updateNotes"}}
+  </div>
+  <button type="button" {{action 'showForm'}}>finish editing</button>
 {{else}}
-    {{#link-to 'question' question.id}}
-    <h4>{{question.content}}</h4>
-    {{/link-to}}
+    <div class="questionDiv">
+    <h4><span class="Q">Q:</span> {{question.content}}</h4>
 
-    <h5> by: {{question.author}}</h5>
 
-    <p>{{question.notes}}</p>
+
+    <p> PS: {{question.notes}}</p>
+
+    <h5> Asks: <span class="princeCharming">{{question.author}}</span></h5>
+  </div>
+  <button type="button" {{action 'showForm'}}>edit</button>
 {{/if}}
 
 
 
-<button type="button" {{action 'showForm'}}>edit</button>
+
 <button {{action 'destroyQuestion'}}>Delete</button>

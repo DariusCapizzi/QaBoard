@@ -1,9 +1,10 @@
 {{#if isShowForm}}
   <form class="">
-    <label for="author">Author: </label>
+    <label for="content">what do you think: </label><br>
+    {{textarea placeholder="Remember, be nice!" value=content}}<br>
+    <label for="author">your name: </label>
     {{input value=author}}
-    <label for="content">Question: </label>
-    {{input value=content}}
+
     <button type="button" {{action 'submitAnswer'}}>Submit</button>
   </form>
 {{else}}
