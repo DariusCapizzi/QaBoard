@@ -5,7 +5,7 @@
     <br>
       <br>
     <label for="content">Answer :</label><br>
-    {{textarea placeholder="Remember, be nice!"  key-up="updateContent"}}
+    {{textarea value=content placeholder="Remember, be nice!"  key-up="updateContent"}}
   <br>
     <br>
       <br>
@@ -16,6 +16,7 @@
         <br>
 <button type="button" {{action 'showForm'}}>finish</button>
 </div>
+
 {{else}}
 
 <div class="singleAnswer">
@@ -24,14 +25,31 @@
   <p>{{answer.content}}</p>
   <h5>signed: <span class="princeCharming">{{answer.author}}</span></h5>
 </div>
+
+  <div class="newReplies">
+  {{#if isReplyForm}}
+
+      {{new-answer question=question answer=answer sendAnswer="sendReply" isReplyForm=isReplyForm}}
+  {{else}}
+      <button class='replyButton' {{action 'showReplyForm'}}>Reply</button>
+  {{/if}}
+  </div>
+
   <button type="button" {{action 'showForm'}}>edit</button>
+
 {{/if}}
-
-
-
-
 
 <button {{action 'destroyAnswer'}}>Delete</button>
 
+<div class="singleAnswerReplies">
+{{#each answer.replies as |answer|}}
+  <div class="singleAnswer singleReply">
+    <span class="A">A:</span>
+
+    <p>{{answer.content}}</p>
+    <h5>signed: <span class="princeCharming">{{answer.author}}</span></h5>
+  </div>
+{{/each}}
+</div>
 
 </div>

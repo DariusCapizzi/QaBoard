@@ -2,8 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isShowForm: false,
+  isReplyForm: false,
   _toggleForm: function(){
     this.set("isShowForm", !this.isShowForm)
+  },
+  _toggleReplyForm: function(){
+    this.set("isReplyForm", !this.isReplyForm)
   },
   actions: {
     destroyAnswer() {
@@ -14,6 +18,9 @@ export default Ember.Component.extend({
     showForm(){
       this._toggleForm()
     },
+    showReplyForm(){
+      this._toggleReplyForm()
+    },
     updateContent(){
       this.answer.set('content', this.get('content'));
       this.answer.save();
@@ -23,6 +30,9 @@ export default Ember.Component.extend({
       this.answer.set('author', this.get('author'));
       this.answer.save();
       // this.transitionTo('answer', this.answer.id);
+    },
+    sendReply(params){
+      this.sendAction('sendAnswer', params);
     }
   }
 });

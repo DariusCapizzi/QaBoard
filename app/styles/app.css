@@ -1,11 +1,11 @@
 .Q{
   color: brown;
-  font-size: 100px;
-  padding-right:  100px;
+  font-size: 90px;
+  padding-right:  40%px;
 }
 
 .princeCharming {
-  font-size: 50px;
+  font-size: 30px;
   color:#ABDDED;
 
   bottom:0px;
@@ -15,6 +15,16 @@
   color: brown;
   font-size: 80px;
   padding-right:  100px;
+}
+
+.newReplies{
+  margin-left: 100px;
+
+}
+.replyButton{
+  display: inline;
+  background-color: #D4A190;
+  width: 100px;
 }
 
 .singleAnswer{
@@ -30,6 +40,14 @@
   height: 200px;
 }
 
+.singleAnswerReplies{
+  padding-left: 100px;
+}
+
+.singleReply {
+  margin-bottom: 30px;
+}
+
 textarea {
   background-image: url("/assets/images/letter.jpg");
   background-size: cover;
@@ -42,13 +60,14 @@ textarea {
 }
 
 .questionDiv {
-    padding-left: 20px;
+  padding-left: 20px;
   background-image: url("/assets/images/letter.jpg");
   background-size: cover;
   -moz-box-shadow:    3px 3px 6px 6px #E8BDAE;
   -webkit-box-shadow: 3px 3px 6px 6px #E8BDAE;
   box-shadow:         3px 3px 6px 6px #E8BDAE;
-  width: 50%;
+
+  width: 40%;
 }
 
 
@@ -70,12 +89,15 @@ a {
 }
 
 .nav {
+  position: fixed;
+  margin-left: 57%;
+  margin-top: 13%;
   text-align: center;
-  padding: 30px;
-  width: 200px;
-  float: right;
-  background-color: #E9C4F5;
-  opacity: 0.6;
+  padding: 20px;
+  width: 150px;
+  margin-right: 200px;
+  background-color: white;
+  opacity: 0.5;
   border-radius: 10%;
     -moz-box-shadow:    3px 3px 6px 6px #E8BDAE;
     -webkit-box-shadow: 3px 3px 6px 6px #E8BDAE;
@@ -97,5 +119,7 @@ body:after{
 
 button {
   background-color: pink;
-
+  width: 40%;
+  display: block;
+  margin: 10px;
 }
