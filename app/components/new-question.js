@@ -17,6 +17,7 @@ export default Ember.Component.extend({
     this.set('notes', '');
     this.sendAction('sendQuestion', params);
   },
+
   actions: {
     showForm(){
       this._toggleForm()

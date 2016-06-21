@@ -42,14 +42,9 @@
 <button {{action 'destroyAnswer'}}>Delete</button>
 
 <div class="singleAnswerReplies">
-{{#each answer.replies as |answer|}}
-  <div class="singleAnswer singleReply">
-    <span class="A">A:</span>
 
-    <p>{{answer.content}}</p>
-    <h5>signed: <span class="princeCharming">{{answer.author}}</span></h5>
-  </div>
-{{/each}}
+  {{answer-list answers=answer.replies saveAnswer="sendReply" question=question isReply=true}}
+
 </div>
 
 </div>
