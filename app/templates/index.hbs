@@ -1,14 +1,12 @@
 {{new-question sendQuestion="saveQuestion"}}
-<!-- {{question-list questions=model.questions}} -->
+
 
 {{#each model.questions as |question|}}
   <div class="questionDiv">
     {{#link-to 'question' question.id}}
-    <h4><span class="Q">Q:</span> {{question.content}}</h4>
+    <h4><span class="Q">Q:</span> {{make-dramatic question.content}}</h4>
     {{/link-to}}
 
-    <h5> asked by: <span class="princeCharming">{{question.author}}</span></h5>
+    <h5> asked by: <span class="princeCharming">{{make-dramatic question.author}}</span></h5>
   </div>
 {{/each}}
-
-{{history-list}}

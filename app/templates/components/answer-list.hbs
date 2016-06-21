@@ -1,7 +1,9 @@
 
 <!-- {{sorting-options sendDate="dateSort" sendKarma="karmaSort"}} -->
 {{#each answers as |answer|}}
+
   {{#if answer.parentAnswer}}
+  
   {{#if isReply}}
   {{answer-tile answer=answer sendAnswer="saveAnswer" question=question}}
   {{/if}}

@@ -15,13 +15,13 @@
   <button type="button" {{action 'showForm'}}>finish editing</button>
 {{else}}
     <div class="questionDiv">
-    <h4><span class="Q">Q:</span> {{question.content}}</h4>
+    <h4><span class="Q">Q:</span> {{make-dramatic question.content}}</h4>
 
 
 
     <p> PS: {{question.notes}}</p>
 
-    <h5> Asks: <span class="princeCharming">{{question.author}}</span></h5>
+    <h5> Asks: <span class="princeCharming">{{make-dramatic question.author}}</span></h5>
   </div>
   <button type="button" {{action 'showForm'}}>edit</button>
 {{/if}}
