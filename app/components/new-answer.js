@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   isShowForm: Ember.computed.or('isReplyForm','isNewForm'),
   isNewForm: false,
   isReplyForm: false,
+  history: Ember.inject.service(),
   _toggleForm: function(){
 
     this.set("isNewForm", !this.isNewForm);
@@ -11,6 +13,7 @@ export default Ember.Component.extend({
     this.set("isReplyForm", !this.isReplyForm);
   },
   _submitAnswer(){
+    this.get("history").add("New Answer: " + this.get('content'));
     var params
     if(this.get('isNewForm')){
       params = {
@@ -26,7 +29,7 @@ export default Ember.Component.extend({
         parentAnswer: this.get('answer')
       };
     }
-    console.log(params);
+    // console.log(params);
     this._toggleForm();
     this.set('author', '');
     this.set('content', '');

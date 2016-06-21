@@ -2,10 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isShowForm: false,
+  history: Ember.inject.service(),
   _toggleForm: function(){
     this.set("isShowForm", !this.isShowForm)
   },
   _submitQuestion(){
+   this.get("history").add("New question: " + this.get('content'));
    var params = {
       author: this.get('author'),
       content: this.get('content'),
